@@ -22,8 +22,11 @@ conda activate faster_rcnn_env
 
 The trained model weights can be downloaded from Google Drive:
 
-[📥 Download Model
+[📥 Download Model V1
 Weights](https://drive.google.com/file/d/1Swm7vXu2T3pnv-6zHpwlg8esK4wXf1Hz/view?usp=drive_link)
+
+[📥 Download Model V2
+Weights]([https://drive.google.com/file/d/1Swm7vXu2T3pnv-6zHpwlg8esK4wXf1Hz/view?usp=drive_link](https://drive.google.com/file/d/1VrE0w32d0mxC6B2UD5NOsk6m-rdK4Y2r/view?usp=drive_link)
 
 Save the file as `model_xxx.pth` and update the path in
 `Inference_V1.py` accordingly.
