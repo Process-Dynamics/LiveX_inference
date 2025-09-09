@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import torchvision
 from tqdm import tqdm
-from torchvision.models.detection import fasterrcnn_resnet50_fpn
+from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.transforms import functional as F
 
@@ -31,11 +31,11 @@ def natural_sort_key(s):
 # 2. Model Construction
 # ----------------------------------------
 
-def create_faster_rcnn_model_50_V1(num_classes):
+def create_faster_rcnn_model_50_V2(num_classes):
     """
     Create a Faster RCNN model with ResNet50 + FPN as the backbone (V1 version)
     """
-    model = fasterrcnn_resnet50_fpn(pretrained=True)
+    model = fasterrcnn_resnet50_fpn_v2(pretrained=True)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model
@@ -279,7 +279,7 @@ def main(num_classes, folder_path, model_weights_path, result_folder_path,
     print("Loading model...")
     
     # Load the model
-    model = create_faster_rcnn_model_50_V1(num_classes)
+    model = create_faster_rcnn_model_50_V2(num_classes)
     
     # Load state dict directly (not wrapped in a dictionary)
     state_dict = torch.load(model_weights_path, map_location=device)
@@ -316,7 +316,7 @@ if __name__ == "__main__":
     # Configuration parameters
     num_classes = 2  # Set the number of classes in the dataset
     FOLDER_PATH = r"C:\Users\lina4366\Desktop\Faster_RCNN\Faster_RCNN__Evaluation\Faster_RCNN__Evaluation\test_demo"
-    MODEL_WEIGHTS_PATH = r"C:\Users\lina4366\Desktop\Faster_RCNN\Faster_RCNN__Evaluation\Faster_RCNN__Evaluation\model_8_11_e17.pth"
+    MODEL_WEIGHTS_PATH = r"C:\Users\lina4366\Desktop\Faster_RCNN\Faster_RCNN__Evaluation\Faster_RCNN__Evaluation\model_V2_weight.pth"
     RESULT_FOLDER_PATH = r"C:\Users\lina4366\Desktop\Faster_RCNN\Faster_RCNN__Evaluation\Faster_RCNN__Evaluation\Result"
     
     # Inference thresholds
