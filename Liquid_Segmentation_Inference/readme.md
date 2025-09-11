@@ -40,7 +40,8 @@ Folder](https://drive.google.com/drive/folders/1vCsBLM4t3umcqe1AxLDB42kFBTZmZZju
 ## Usage
 
 ### 1. Prepare Data
-Organize your X-ray images in the following structure:
+Organize your X-ray images in the following structure 
+(Image type support: '.jpg', '.jpeg', '.png','.JPG', '.JPEG', '.PNG'):
 ```
 Test_images/
 ├── experiment_A/

@@ -321,7 +321,7 @@ if __name__ == "__main__":
     
     # Inference thresholds
     score_threshold = 0.5        # Confidence threshold
-    nms_iou_threshold = 0.5      # NMS threshold
+    nms_iou_threshold = 0.5     # NMS threshold
     
     # Output options
     plot_output_images = True    # Set to False to skip image visualization  
